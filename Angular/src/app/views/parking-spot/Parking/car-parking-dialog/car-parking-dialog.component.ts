@@ -45,4 +45,39 @@ public carForm: FormGroup;
     this.carForm.reset();
     window.location.reload();
   }
+
+
+            postItem(item: any)
+            {
+              this.rest.post(item).subscribe({
+                next: () => { },
+                error: (e) => {},
+                complete: () => 
+                { }
+              }); 
+            };
+
+            updateItem(item: any) 
+            {
+              item.id = 1
+
+              this.rest.update(item).subscribe({
+                next: () => { },
+                error: (e) => {},
+                complete: () => 
+                { 
+                
+                },
+                
+              });
+
+          }
+
+          deleteItem()
+            {
+              this.rest.delete("1").subscribe(() =>
+              {
+                alert("Removido com sucesso");
+              });
+            };
 }
