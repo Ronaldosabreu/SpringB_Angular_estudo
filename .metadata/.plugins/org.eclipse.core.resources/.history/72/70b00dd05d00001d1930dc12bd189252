@@ -1,0 +1,8 @@
+spring.datasource.url= jdbc:sqlserver://localhost:1433;databaseName=parking;integratedSecurity=true;encrypt=true;trustServerCertificate=true
+     
+     jdbc:sqlserver://localhost:1433;databaseName=parking
+spring.datasource.username=rm
+spring.datasource.password=rm
+spring.jpa.hibernate.ddl-auto = update
+
+spring.jpa.properties.hibernate.jdbc.lab.non_contextual_creation=true

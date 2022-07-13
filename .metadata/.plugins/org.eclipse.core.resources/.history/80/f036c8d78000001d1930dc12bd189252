@@ -1,0 +1,39 @@
+package com.api.parkingcontrol.services;
+
+import javax.transaction.Transactional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.api.parkingcontrol.models.ParkinSpotModel;
+import com.api.parkingcontrol.repositories.IParkingSpotRepository;
+
+@Service
+public class ParkingSpotService 
+{
+//	@Autowired
+//	IParkingSpotRepository parkingSpotRepository;
+	final IParkingSpotRepository parkingSpotRepository;
+	
+	public ParkingSpotService(IParkingSpotRepository parkingSpotRepository) {
+			this.parkingSpotRepository = parkingSpotRepository;
+
+	}
+
+	@Transactional
+	public ParkinSpotModel save(ParkinSpotModel parkingSpotModel) {
+		// TODO Auto-generated method stub
+		return parkingSpotRepository.save(parkingSpotModel);
+	}
+
+	public boolean existsByLicensePlateCar(String licensePlateCar) {
+		// TODO Auto-generated method stub
+		return parkingSpotRepository.existsByLicensePlateCar(licensePlateCar);
+	}
+
+	public boolean existsByParkingSpotNumber(String parkingSpotNumber) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+	
+}

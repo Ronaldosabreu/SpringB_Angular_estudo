@@ -1,0 +1,6 @@
+spring.datasource.url=jdbc:sqlserver://localhost;databaseName=parking
+spring.datasource.username=rm
+spring.datasource.password=rm
+spring.jpa.hibernate.ddl-auto = update
+
+spring.jpa.properties.hibernate.jdbc.lab.non_contextual_creation=true

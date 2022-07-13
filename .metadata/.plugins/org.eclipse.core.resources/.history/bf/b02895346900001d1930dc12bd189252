@@ -1,0 +1,32 @@
+package com.api.parkingcontrol.dtos;
+
+import java.time.LocalDateTime;
+import java.util.UUID;
+
+import javax.persistence.Column;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+public class ParkingSpotDTO 
+{
+	
+	
+	private String parkingSpotNumber;
+	
+	private String parkinglicensePlateCar;
+	
+	private String brandCar;
+	
+	private String modelCar;
+	
+	private String ColorCar;
+	
+	
+	private String responsibleName;
+	
+	private String apartment;
+	
+	private String block;
+
+}

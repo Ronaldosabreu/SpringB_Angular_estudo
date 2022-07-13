@@ -1,0 +1,12 @@
+package com.api.parkingcontrol.models;
+
+import javax.persistence.Entity;
+
+@Entity
+@table(name = "TB_PARKING_SPOT")
+public class ParkinSpotModel 
+{
+	
+	
+
+}

@@ -1,0 +1,11 @@
+package configs;
+
+import org.springframework.context.annotation.Configuration;
+
+@Configuration
+public class DateConfig 
+{
+public static final String DATETIME_FORMAT
+	
+	
+}

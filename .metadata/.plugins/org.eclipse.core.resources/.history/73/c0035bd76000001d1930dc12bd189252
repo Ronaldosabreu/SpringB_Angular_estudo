@@ -1,0 +1,25 @@
+package com.api.parkingcontrol.models;
+
+import java.io.Serializable;
+import java.util.UUID;
+
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "TB_PARKING_SPOT")
+public class ParkinSpotModel implements Serializable 
+{
+	private static final long serialVersionUID = 1L;
+	
+	private UUID id;
+	private String parkingSpotNumber;
+	private String parkinglicensePlateCar;
+	private String brandCar;
+	private String modelCarSpotNumber;
+	private String ColorCarNumber;
+	private String registrationdate;
+	private String responsibleName;
+	
+
+}
