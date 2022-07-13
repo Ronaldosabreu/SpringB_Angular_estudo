@@ -1,0 +1,51 @@
+<h1 mat-dialog-title>Novo Car Parking</h1>
+
+<div mat-dialog-content>
+  <form class="example-form" [formGroup]="carForm">
+
+    <mat-form-field class="example-fill-width">
+      <mat-label>Numero da Vaga</mat-label>
+      <input matInput formControlName="parkingSpotNumber" name="parkingSpotNumber">
+    </mat-form-field>
+
+    <mat-form-field class="example-fill-width">
+      <mat-label>Numero da Vaga</mat-label>
+      <input matInput formControlName="licensePlateCar" name="licensePlateCar">
+    </mat-form-field>
+
+    <mat-form-field class="example-fill-width">
+      <mat-label>Numero da Vaga</mat-label>
+      <input matInput formControlName="brandCar" name="brandCar">
+    </mat-form-field>
+
+    <mat-form-field class="example-fill-width">
+      <mat-label>Numero da Vaga</mat-label>
+      <input matInput formControlName="modelCar" name="modelCar">
+    </mat-form-field>
+
+    <mat-form-field class="example-fill-width">
+      <mat-label>Numero da Vaga</mat-label>
+      <input matInput formControlName="colorCar" name="colorCar">
+    </mat-form-field>
+
+    <mat-form-field class="example-fill-width">
+      <mat-label>Numero da Vaga</mat-label>
+      <input matInput formControlName="responsibleName" name="responsibleName">
+    </mat-form-field>
+
+    <mat-form-field class="example-fill-width">
+      <mat-label>Numero da Vaga</mat-label>
+      <input matInput formControlName="apartment" name="apartment">
+    </mat-form-field>
+
+    <mat-form-field class="example-fill-width">
+      <mat-label>Numero da Vaga</mat-label>
+      <input matInput formControlName="block" name="block">
+    </mat-form-field>
+  </form>
+</div>
+
+<div mat-dialog-actions>
+  <button mat-raised-button color="primary" (click)="createLive()">Adicionar</button>
+  <button mat-button (click)="cancel()">No Thanks</button>
+</div>

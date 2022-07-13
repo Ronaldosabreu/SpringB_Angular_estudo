@@ -1,0 +1,20 @@
+<mat-toolbar >
+  <mat-toolbar-row style="font-size: 1.5rem; height: 80px;">
+    <span>Parking Spot Line <mat-icon>date_range</mat-icon></span>
+    <span class="example-spacer"></span>
+    <button mat-raised-button (click)="addCarParking()"> <mat-icon>add</mat-icon> Car Parking</button>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<mat-tab-group animationDuration="0ms" style="padding-top: 40p; padding-left: 2%; padding-right: 2%;">
+  <mat-tab label="First">
+    <app-add-parking></app-add-parking>
+    <app-list-parking></app-list-parking>
+  </mat-tab>
+  <mat-tab label="Second">
+    <app-list-parking></app-list-parking>  
+  </mat-tab>
+  <mat-tab label="Third">Content 3</mat-tab>
+</mat-tab-group>
+
+
