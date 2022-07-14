@@ -45,8 +45,6 @@ public carForm: FormGroup;
     this.carForm.reset();
     window.location.reload();
   }
-
-
             postItem(item: any)
             {
               this.rest.post(item).subscribe({

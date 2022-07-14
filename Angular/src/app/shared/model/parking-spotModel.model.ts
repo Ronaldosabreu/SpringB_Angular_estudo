@@ -5,16 +5,16 @@
     }
 
     export class ParkingSpotModel {
-        id: string;
+        id?: string;
         parkingSpotNumber: string;
         licensePlateCar: string;
         brandCar: string;
         modelCar: string;
         colorCar: string;
-        registrationDate: Date;
+        registrationDate?: Date;
         responsibleName: string;
         apartment: string;
         block: string;
-        links: Link[];
+        links?: Link[];
     }
 

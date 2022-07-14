@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, Input, OnInit } from '@angular/core';
 import { Link, ParkingSpotModel } from 'src/app/shared/model/parking-spotModel.model';
 import { ParkingService } from 'src/app/shared/service/parking.service';
 import {animate, state, style, transition, trigger} from '@angular/animations';
@@ -23,11 +23,13 @@ export class ListParkingComponent implements OnInit {
   parkingLoad: boolean=false;
   
 
+
   displayedColumns: string[] = ['id','parkingSpotNumber','responsibleName','actions'];
   columnsToDisplayWithExpand = [...this.displayedColumns, 'expand'];
 
 
-  constructor(public httpClient: HttpClient, public service: ParkingService) { }
+  constructor(public httpClient: HttpClient, public service: ParkingService
+    , private cdref: ChangeDetectorRef) { }
   expandedElement = ParkingSpotModel;
   
   ngOnInit() 
@@ -37,18 +39,44 @@ export class ListParkingComponent implements OnInit {
 
   getParkings()
     {
-      setTimeout(()=>
-      {
-        this.service.getParkingWithPage(0,10).subscribe(data=>{
-            this.parkings = data.content;
-            console.log(this.parkings)
-
+      // setTimeout(()=>
+      // {
+        this.service.getParkingWithPage(0,10).subscribe({
+        next: (data: any) =>  { 
+          this.parkings = data.content;  
+         
+        },
+        complete: () => 
+        { 
             this.parkingLoad = true;
+         },
+        error: (erro: Error) => {
+            this.parkingLoad = true;
+        }
         });
-      },3000);
+
+
+      // },0);
     }
-    teste(element: ParkingSpotModel)
+    enviaPai()
     {
-      console.table(element);
+      this.parkings.push({
+        apartment: '1',
+        block: '1',
+        brandCar: '1',
+        colorCar: '1',
+        licensePlateCar:'11',
+        modelCar:'1',
+        parkingSpotNumber:'1',
+        responsibleName:'sss',
+        id:'fsfsdfd',
+        links: [{href:'',rel:''}]
+      });
+      this.parkings = [...this.parkings];//refresh the dataSource
     }
+    
+  ngAfterContentChecked() {
+    this.cdref.detectChanges();
+  }
+    
 }
